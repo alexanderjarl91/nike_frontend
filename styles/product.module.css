@@ -1,0 +1,52 @@
+.grid {
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+@media screen and (min-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media screen and (min-width: 1300px) {
+  .grid {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+.product {
+  /* background-color: rgba(128, 128, 128, 0.287); */
+  margin: 1.5rem;
+  width: 40%;
+  min-width: 300px;
+  align-items: center;
+  text-align: center;
+  cursor: pointer;
+  margin: 4rem auto;
+}
+.product:hover {
+  opacity: 0.6;
+}
+
+.product__image {
+  width: 20%;
+  min-width: 200px;
+}
+
+.product__title {
+  padding: 10px;
+  font-size: 20px;
+  font-weight: 200;
+}
+
+.product__price {
+  padding: 0px;
+  font-size: 18px;
+  font-weight: 250;
+}
+
+.product__onSale {
+  color: green;
+}
