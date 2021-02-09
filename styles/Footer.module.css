@@ -14,8 +14,31 @@
 .icons > * {
   width: 35px;
   margin: 1rem;
+  transition: all 0.3s ease 0s;
+}
+
+.icons > *:hover {
+  transform: translateY(-5px);
 }
 
 .footerText {
   font-weight: 150;
+}
+
+.cartBtn {
+  margin-top: 2rem;
+  background-color: white;
+  border: 1px solid black;
+  padding: 10px 15px;
+  border-radius: 20px;
+  box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease 0s;
+}
+
+.cartBtn:hover {
+  background-color: black;
+  color: white;
+  box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.3);
+  color: #fff;
+  transform: translateY(-3px);
 }

@@ -1,0 +1,35 @@
+import Navbar from "../components/Navbar";
+import styles from "../../styles/specificProducts.module.css"
+import Footer from "../components/Footer";
+
+export default function SpecificProduct({ product }) {
+  return (
+    <div>
+      <Navbar />
+      <div className={styles.container}>
+
+        <img className={styles.specificProduct__image} src={product.productImg} />
+        <div className={styles.container}>
+          <h1 className={styles.title}>{product.productName}</h1>
+          <p className={styles.description}>{product.productDescription}</p>
+          <h1 className={styles.price}>{product.productPrice} kr</h1>
+          {product.productOnSale? <p className={styles.description}>ON SALE!</p> : null}
+
+        </div>
+        <button className={styles.cartBtn}>ADD TO CART</button>
+      </div>
+      <Footer />
+    </div>
+  );
+}
+
+export async function getServerSideProps(context) {
+  const { id } = context.query;
+  console.log("the id is:", id);
+
+  const res = await fetch(`https://efni-api.herokuapp.com/nike/${id}`);
+  const product = await res.json();
+  return {
+    props: { product: product },
+  };
+}
