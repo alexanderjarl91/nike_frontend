@@ -1,5 +1,5 @@
 import React from "react";
-import NextLink from "next/Link";
+import NextLink from "next/link";
 import styles from "../../styles/product.module.css";
 
 export default function Product({ products }) {
