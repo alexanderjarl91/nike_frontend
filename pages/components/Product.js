@@ -1,5 +1,5 @@
 import React from "react";
-import Link from "next/Link";
+import NextLink from "next/Link";
 import styles from "../../styles/product.module.css";
 
 export default function Product({ products }) {
@@ -8,7 +8,7 @@ export default function Product({ products }) {
       {products &&
         products.map((product) => {
           return (
-            <Link href="/products/[id]" as={`/products/${product._id}`}>
+            <NextLink href="/products/[id]" as={`/products/${product._id}`}>
               <div key={product._id} className={styles.product}>
                 <img
                   className={styles.product__image}
@@ -22,7 +22,7 @@ export default function Product({ products }) {
                   <p className={styles.product__onSale}>on sale!</p>
                 ) : null}
               </div>
-            </Link>
+            </NextLink>
           );
         })}
     </div>

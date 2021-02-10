@@ -18,6 +18,7 @@ export default function Products({ products }) {
   );
 }
 
+//fetch data for a pre-rendered page (fetches on build and on every request with a once a minute maximum (i.e. revalidates data with 60 second intervals if requests are being made))
 export async function getStaticProps() {
   const res = await fetch("http://efni-api.herokuapp.com/nike");
   const products = await res.json();
@@ -26,5 +27,6 @@ export async function getStaticProps() {
     props: {
       products,
     },
+    revalidate: 60,
   };
 }

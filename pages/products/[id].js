@@ -1,5 +1,5 @@
 import Navbar from "../components/Navbar";
-import styles from "../../styles/specificProducts.module.css"
+import styles from "../../styles/specificProducts.module.css";
 import Footer from "../components/Footer";
 
 export default function SpecificProduct({ product }) {
@@ -7,14 +7,17 @@ export default function SpecificProduct({ product }) {
     <div>
       <Navbar />
       <div className={styles.container}>
-
-        <img className={styles.specificProduct__image} src={product.productImg} />
+        <img
+          className={styles.specificProduct__image}
+          src={product.productImg}
+        />
+        <h1 className={styles.title}>{product.productName}</h1>
         <div className={styles.container}>
-          <h1 className={styles.title}>{product.productName}</h1>
           <p className={styles.description}>{product.productDescription}</p>
           <h1 className={styles.price}>{product.productPrice} kr</h1>
-          {product.productOnSale? <p className={styles.description}>ON SALE!</p> : null}
-
+          {product.productOnSale ? (
+            <p className={styles.description}>ON SALE!</p>
+          ) : null}
         </div>
         <button className={styles.cartBtn}>ADD TO CART</button>
       </div>
