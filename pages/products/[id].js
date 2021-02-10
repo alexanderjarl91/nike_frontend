@@ -26,9 +26,9 @@ export default function SpecificProduct({ product }) {
   );
 }
 
+//fully dynamic data, fetches everytime user requests this page
 export async function getServerSideProps(context) {
   const { id } = context.query;
-  console.log("the id is:", id);
 
   const res = await fetch(`https://efni-api.herokuapp.com/nike/${id}`);
   const product = await res.json();

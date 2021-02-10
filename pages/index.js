@@ -3,7 +3,7 @@ import styles from "../styles/Home.module.css";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 
-export default function Home({ products }) {
+export default function Home() {
   return (
     <div className={styles.container}>
       <Head>
@@ -22,15 +22,4 @@ export default function Home({ products }) {
       <Footer />
     </div>
   );
-}
-
-export async function getStaticProps() {
-  const res = await fetch("http://efni-api.herokuapp.com/nike");
-  const products = await res.json();
-
-  return {
-    props: {
-      products,
-    },
-  };
 }
